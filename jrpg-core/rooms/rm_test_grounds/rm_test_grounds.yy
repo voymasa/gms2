@@ -1,6 +1,6 @@
 
 {
-    "name": "room0",
+    "name": "rm_test_grounds",
     "id": "fb06d061-35c7-4591-8a9e-075fa53c537c",
     "creationCodeFile": "",
     "inheritCode": false,
