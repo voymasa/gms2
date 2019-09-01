@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/Woodwall_singleTile_64px.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="wall_2d" type="Node2D"]
+
+[node name="sb2d_wall" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 3
+
+[node name="cs2s_wall" type="CollisionShape2D" parent="sb2d_wall"]
+shape = SubResource( 1 )
+
+[node name="spr_wall" type="Sprite" parent="sb2d_wall"]
+texture = ExtResource( 1 )

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/collidables/wall/wall_2d.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/characters/player_characters/player_avatar/player_avatar_2d.tscn" type="PackedScene" id=2]
+
+[node name="level_testing_grounds" type="Node2D"]
+
+[node name="spr_background" type="Sprite" parent="."]
+
+[node name="walls" type="Node2D" parent="."]
+
+[node name="wall_2d" parent="walls" instance=ExtResource( 1 )]
+position = Vector2( 224, 160 )
+
+[node name="wall_2d2" parent="walls" instance=ExtResource( 1 )]
+position = Vector2( 384, 416 )
+
+[node name="wall_2d3" parent="walls" instance=ExtResource( 1 )]
+position = Vector2( 32, 256 )
+
+[node name="player_avatar_2d" parent="." instance=ExtResource( 2 )]
+position = Vector2( 224, 320 )
