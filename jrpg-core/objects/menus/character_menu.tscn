@@ -1,0 +1,258 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/menus/char_main_menu.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="character_menu" type="Node2D"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 960.0
+margin_bottom = 540.0
+size_flags_stretch_ratio = 4.0
+
+[node name="left_panel" type="PanelContainer" parent="HBoxContainer"]
+margin_right = 176.0
+margin_bottom = 540.0
+
+[node name="vbox_menu_choices" type="VBoxContainer" parent="HBoxContainer/left_panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 169.0
+margin_bottom = 533.0
+
+[node name="char_main_menu" type="ItemList" parent="HBoxContainer/left_panel/vbox_menu_choices"]
+margin_right = 162.0
+margin_bottom = 9.0
+allow_reselect = true
+max_text_lines = 6
+auto_height = true
+script = ExtResource( 1 )
+
+[node name="bottom_panel" type="PanelContainer" parent="HBoxContainer/left_panel/vbox_menu_choices"]
+editor/display_folded = true
+anchor_bottom = 1.0
+margin_top = 13.0
+margin_right = 162.0
+margin_bottom = -467.0
+
+[node name="game_stats_grid" type="GridContainer" parent="HBoxContainer/left_panel/vbox_menu_choices/bottom_panel"]
+editor/display_folded = true
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 155.0
+margin_bottom = 39.0
+
+[node name="lbl_time" type="Label" parent="HBoxContainer/left_panel/vbox_menu_choices/bottom_panel/game_stats_grid"]
+margin_right = 148.0
+margin_bottom = 14.0
+text = "Time Played HH:MM:SS"
+valign = 1
+
+[node name="lbl_money" type="Label" parent="HBoxContainer/left_panel/vbox_menu_choices/bottom_panel/game_stats_grid"]
+margin_top = 18.0
+margin_right = 148.0
+margin_bottom = 32.0
+text = "Coins 0"
+valign = 1
+
+[node name="characters_grid" type="GridContainer" parent="HBoxContainer"]
+margin_left = 180.0
+margin_right = 342.0
+margin_bottom = 540.0
+size_flags_stretch_ratio = 4.0
+columns = 2
+
+[node name="panel_pc_1" type="PanelContainer" parent="HBoxContainer/characters_grid"]
+margin_right = 79.0
+margin_bottom = 64.0
+
+[node name="hbox_stat_summary" type="HBoxContainer" parent="HBoxContainer/characters_grid/panel_pc_1"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 72.0
+margin_bottom = 57.0
+size_flags_stretch_ratio = 2.0
+
+[node name="cbox_sprite" type="CenterContainer" parent="HBoxContainer/characters_grid/panel_pc_1/hbox_stat_summary"]
+margin_bottom = 50.0
+size_flags_stretch_ratio = 2.0
+
+[node name="spr_battler" type="Sprite" parent="HBoxContainer/characters_grid/panel_pc_1/hbox_stat_summary/cbox_sprite"]
+position = Vector2( 156, 128 )
+texture = ExtResource( 2 )
+
+[node name="vbox_stats" type="VBoxContainer" parent="HBoxContainer/characters_grid/panel_pc_1/hbox_stat_summary"]
+margin_left = 4.0
+margin_right = 65.0
+margin_bottom = 50.0
+
+[node name="lbl_name" type="Label" parent="HBoxContainer/characters_grid/panel_pc_1/hbox_stat_summary/vbox_stats"]
+margin_right = 61.0
+margin_bottom = 14.0
+text = "PC One"
+valign = 1
+uppercase = true
+
+[node name="lbl_hp" type="Label" parent="HBoxContainer/characters_grid/panel_pc_1/hbox_stat_summary/vbox_stats"]
+margin_top = 18.0
+margin_right = 61.0
+margin_bottom = 32.0
+text = "HP 10/10"
+valign = 1
+uppercase = true
+
+[node name="lbl_mp" type="Label" parent="HBoxContainer/characters_grid/panel_pc_1/hbox_stat_summary/vbox_stats"]
+margin_top = 36.0
+margin_right = 61.0
+margin_bottom = 50.0
+text = "MP 10/10"
+valign = 1
+uppercase = true
+
+[node name="panel_pc_2" type="PanelContainer" parent="HBoxContainer/characters_grid"]
+margin_left = 83.0
+margin_right = 162.0
+margin_bottom = 64.0
+
+[node name="hbox_stat_summary" type="HBoxContainer" parent="HBoxContainer/characters_grid/panel_pc_2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 72.0
+margin_bottom = 57.0
+size_flags_stretch_ratio = 2.0
+
+[node name="cbox_sprite" type="CenterContainer" parent="HBoxContainer/characters_grid/panel_pc_2/hbox_stat_summary"]
+margin_bottom = 50.0
+size_flags_stretch_ratio = 2.0
+
+[node name="spr_battler" type="Sprite" parent="HBoxContainer/characters_grid/panel_pc_2/hbox_stat_summary/cbox_sprite"]
+position = Vector2( 156, 128 )
+texture = ExtResource( 2 )
+
+[node name="vbox_stats" type="VBoxContainer" parent="HBoxContainer/characters_grid/panel_pc_2/hbox_stat_summary"]
+editor/display_folded = true
+margin_left = 4.0
+margin_right = 65.0
+margin_bottom = 50.0
+
+[node name="lbl_name" type="Label" parent="HBoxContainer/characters_grid/panel_pc_2/hbox_stat_summary/vbox_stats"]
+margin_right = 61.0
+margin_bottom = 14.0
+text = "PC One"
+valign = 1
+uppercase = true
+
+[node name="lbl_hp" type="Label" parent="HBoxContainer/characters_grid/panel_pc_2/hbox_stat_summary/vbox_stats"]
+margin_top = 18.0
+margin_right = 61.0
+margin_bottom = 32.0
+text = "HP 10/10"
+valign = 1
+uppercase = true
+
+[node name="lbl_mp" type="Label" parent="HBoxContainer/characters_grid/panel_pc_2/hbox_stat_summary/vbox_stats"]
+margin_top = 36.0
+margin_right = 61.0
+margin_bottom = 50.0
+text = "MP 10/10"
+valign = 1
+uppercase = true
+
+[node name="panel_pc_3" type="PanelContainer" parent="HBoxContainer/characters_grid"]
+margin_top = 68.0
+margin_right = 79.0
+margin_bottom = 132.0
+
+[node name="hbox_stat_summary" type="HBoxContainer" parent="HBoxContainer/characters_grid/panel_pc_3"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 72.0
+margin_bottom = 57.0
+size_flags_stretch_ratio = 2.0
+
+[node name="cbox_sprite" type="CenterContainer" parent="HBoxContainer/characters_grid/panel_pc_3/hbox_stat_summary"]
+editor/display_folded = true
+margin_bottom = 50.0
+size_flags_stretch_ratio = 2.0
+
+[node name="spr_battler" type="Sprite" parent="HBoxContainer/characters_grid/panel_pc_3/hbox_stat_summary/cbox_sprite"]
+position = Vector2( 156, 128 )
+texture = ExtResource( 2 )
+
+[node name="vbox_stats" type="VBoxContainer" parent="HBoxContainer/characters_grid/panel_pc_3/hbox_stat_summary"]
+editor/display_folded = true
+margin_left = 4.0
+margin_right = 65.0
+margin_bottom = 50.0
+
+[node name="lbl_name" type="Label" parent="HBoxContainer/characters_grid/panel_pc_3/hbox_stat_summary/vbox_stats"]
+margin_right = 61.0
+margin_bottom = 14.0
+text = "PC One"
+valign = 1
+uppercase = true
+
+[node name="lbl_hp" type="Label" parent="HBoxContainer/characters_grid/panel_pc_3/hbox_stat_summary/vbox_stats"]
+margin_top = 18.0
+margin_right = 61.0
+margin_bottom = 32.0
+text = "HP 10/10"
+valign = 1
+uppercase = true
+
+[node name="lbl_mp" type="Label" parent="HBoxContainer/characters_grid/panel_pc_3/hbox_stat_summary/vbox_stats"]
+margin_top = 36.0
+margin_right = 61.0
+margin_bottom = 50.0
+text = "MP 10/10"
+valign = 1
+uppercase = true
+
+[node name="panel_pc_4" type="PanelContainer" parent="HBoxContainer/characters_grid"]
+margin_left = 83.0
+margin_top = 68.0
+margin_right = 162.0
+margin_bottom = 132.0
+
+[node name="hbox_stat_summary" type="HBoxContainer" parent="HBoxContainer/characters_grid/panel_pc_4"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 72.0
+margin_bottom = 57.0
+size_flags_stretch_ratio = 2.0
+
+[node name="cbox_sprite" type="CenterContainer" parent="HBoxContainer/characters_grid/panel_pc_4/hbox_stat_summary"]
+margin_bottom = 50.0
+size_flags_stretch_ratio = 2.0
+
+[node name="spr_battler" type="Sprite" parent="HBoxContainer/characters_grid/panel_pc_4/hbox_stat_summary/cbox_sprite"]
+position = Vector2( 156, 128 )
+texture = ExtResource( 2 )
+
+[node name="vbox_stats" type="VBoxContainer" parent="HBoxContainer/characters_grid/panel_pc_4/hbox_stat_summary"]
+margin_left = 4.0
+margin_right = 65.0
+margin_bottom = 50.0
+
+[node name="lbl_name" type="Label" parent="HBoxContainer/characters_grid/panel_pc_4/hbox_stat_summary/vbox_stats"]
+margin_right = 61.0
+margin_bottom = 14.0
+text = "PC One"
+valign = 1
+uppercase = true
+
+[node name="lbl_hp" type="Label" parent="HBoxContainer/characters_grid/panel_pc_4/hbox_stat_summary/vbox_stats"]
+margin_top = 18.0
+margin_right = 61.0
+margin_bottom = 32.0
+text = "HP 10/10"
+valign = 1
+uppercase = true
+
+[node name="lbl_mp" type="Label" parent="HBoxContainer/characters_grid/panel_pc_4/hbox_stat_summary/vbox_stats"]
+margin_top = 36.0
+margin_right = 61.0
+margin_bottom = 50.0
+text = "MP 10/10"
+valign = 1
+uppercase = true
