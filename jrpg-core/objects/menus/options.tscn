@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/menus/options.gd" type="Script" id=1]
+[ext_resource path="res://fonts/ModernSans-light28px.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/ModernSans-Light46px.tres" type="DynamicFont" id=3]
+
+[node name="options" type="Control"]
+margin_left = -320.0
+margin_top = -180.0
+margin_right = 320.0
+margin_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 1 )
+
+[node name="option_font_size" type="Label" parent="."]
+margin_top = 100.0
+margin_right = 114.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 2 )
+text = "Font Size"
+
+[node name="font_slider" type="HSlider" parent="option_font_size"]
+margin_left = 4.0
+margin_top = 42.0
+margin_right = 147.0
+margin_bottom = 58.0
+min_value = 1.0
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="font_static_text" type="Label" parent="option_font_size"]
+margin_left = 3.0
+margin_top = 92.0
+margin_right = 196.0
+margin_bottom = 120.0
+custom_fonts/font = ExtResource( 2 )
+text = "Static Font Size"
+
+[node name="font_short_lived_text" type="Label" parent="option_font_size"]
+margin_left = 3.0
+margin_top = 176.0
+margin_right = 421.0
+margin_bottom = 221.0
+custom_fonts/font = ExtResource( 3 )
+text = "Short-lived Font Size"
+[connection signal="value_changed" from="option_font_size/font_slider" to="." method="_on_font_slider_value_changed"]

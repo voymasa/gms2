@@ -37,24 +37,24 @@ func get_4dir_movement():
 	if up:
 		velocity.y = -MOVE_SPEED;
 		$spr_player_avatar.flip_h = false;
-		$anim_player_avatar.play("move_up");
+		$spr_player_avatar/anim_player_avatar.play("move_up");
 	elif down:
 		velocity.y = MOVE_SPEED;
 		$spr_player_avatar.flip_h = false;
-		$anim_player_avatar.play("move_down");
+		$spr_player_avatar/anim_player_avatar.play("move_down");
 	elif left:
 		velocity.x = -MOVE_SPEED;
 		$spr_player_avatar.flip_h = true;
-		$anim_player_avatar.play("move_right");
+		$spr_player_avatar/anim_player_avatar.play("move_right");
 	elif right:
 		velocity.x = MOVE_SPEED;
 		$spr_player_avatar.flip_h = false;
-		$anim_player_avatar.play("move_right");
+		$spr_player_avatar/anim_player_avatar.play("move_right");
 	else:
-		var current_anim = $anim_player_avatar.get_current_animation();
+		var current_anim = $spr_player_avatar/anim_player_avatar.get_current_animation();
 		if current_anim == "move_up":
-			$anim_player_avatar.queue("idle_up");
+			$spr_player_avatar/anim_player_avatar.queue("idle_up");
 		if current_anim == "move_down":
-			$anim_player_avatar.queue("idle_down");
-		if current_anim == "move_right" or current_anim == "move_left":
-			$anim_player_avatar.queue("idle_right");
+			$spr_player_avatar/anim_player_avatar.queue("idle_down");
+		if current_anim == "move_right":
+			$spr_player_avatar/anim_player_avatar.queue("idle_right");
