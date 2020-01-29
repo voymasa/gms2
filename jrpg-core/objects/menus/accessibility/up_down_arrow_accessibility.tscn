@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/Pixellari28px.tres" type="DynamicFont" id=1]
+[ext_resource path="res://sprites/controller_icons_28px.png" type="Texture" id=2]
+
+[node name="action_label" type="Label"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -336.0
+margin_top = -14.0
+margin_right = -142.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Move Cursor"
+valign = 1
+uppercase = true
+
+[node name="up_sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -64, 0 )
+vframes = 3
+hframes = 5
+frame = 2
+
+[node name="down_sprite" type="Sprite" parent="up_sprite"]
+position = Vector2( 32, 0 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -64, 0 )
+vframes = 3
+hframes = 5
+frame = 1

@@ -6,16 +6,24 @@ extends KinematicBody2D
 const MOVE_SPEED = 128;
 var velocity = Vector2();
 var speed_modifier = 1.0;
+var previous_velocity = null;
+var follower_pc;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if previous_velocity != null:
+		previous_velocity = velocity;
 	get_4dir_movement();
+	if previous_velocity == null:
+		previous_velocity = velocity;
 	get_action_inputs();
 	velocity = move_and_slide(velocity * speed_modifier);
+	#follower_pc = get_tree().get_root().get_node("follower_avatar");
+	#follower_pc.get_4dir_follower_move(previous_velocity);
 	#var collision_info = move_and_collide(velocity);
 	#if collision_info:
 	#	velocity = velocity.slide(collision_info.normal);

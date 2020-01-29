@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scripts/player_avatar_2d.gd" type="Script" id=1]
-[ext_resource path="res://sprites/priestess_nun_avatar.png" type="Texture" id=2]
+[ext_resource path="res://scripts/follower_player_char_avatar.gd" type="Script" id=1]
+[ext_resource path="res://sprites/inquisitor_avatar.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle_down"
@@ -105,7 +105,7 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 16, 12 )
 
-[node name="player_avatar" type="KinematicBody2D"]
+[node name="follower_avatar" type="KinematicBody2D"]
 collision_mask = 30
 script = ExtResource( 1 )
 
