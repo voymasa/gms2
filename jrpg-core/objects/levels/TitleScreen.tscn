@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://sprites/sovereign_virtue_title_bg.png" type="Texture" id=2]
+[ext_resource path="res://sprites/menu_container64x256px.png" type="Texture" id=3]
+[ext_resource path="res://fonts/Pixellari28px.tres" type="DynamicFont" id=4]
+[ext_resource path="res://sprites/menu_container_red_white_variant.png" type="Texture" id=5]
+[ext_resource path="res://objects/menus/selector.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/menus/accessibility/visual_accessibility_info.tscn" type="PackedScene" id=7]
+
+[node name="title_screen" type="Control"]
+margin_right = 800.0
+margin_bottom = 450.0
+script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 400, 225 )
+texture = ExtResource( 2 )
+
+[node name="title_rect" type="NinePatchRect" parent="."]
+margin_left = 200.0
+margin_top = 50.0
+margin_right = 600.0
+margin_bottom = 178.0
+texture = ExtResource( 3 )
+patch_margin_left = 26
+patch_margin_top = 26
+patch_margin_right = 26
+patch_margin_bottom = 26
+
+[node name="title_label" type="Label" parent="title_rect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -336.0
+margin_top = -96.0
+margin_right = -33.0
+margin_bottom = -51.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 4 )
+text = "Sovereign: Diakonia"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="game_info_label" type="Label" parent="title_rect/title_label"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -335.0
+margin_top = 50.0
+margin_right = 17.0
+margin_bottom = 33.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 4 )
+text = "Game by Aaron Voymas"
+valign = 1
+uppercase = true
+
+[node name="menu_container" type="NinePatchRect" parent="title_rect/title_label"]
+margin_left = 225.0
+margin_top = 100.0
+margin_right = 525.0
+margin_bottom = 250.0
+texture = ExtResource( 5 )
+patch_margin_left = 26
+patch_margin_top = 26
+patch_margin_right = 26
+patch_margin_bottom = 26
+
+[node name="title_options" type="VBoxContainer" parent="title_rect/title_label/menu_container"]
+margin_left = 28.0
+margin_top = 16.0
+margin_right = 270.0
+margin_bottom = 144.0
+
+[node name="new_game_label" type="Label" parent="title_rect/title_label/menu_container/title_options"]
+margin_right = 242.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "New Game"
+valign = 1
+uppercase = true
+
+[node name="load_game_label" type="Label" parent="title_rect/title_label/menu_container/title_options"]
+margin_top = 32.0
+margin_right = 242.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Load Game"
+valign = 1
+uppercase = true
+
+[node name="options_label" type="Label" parent="title_rect/title_label/menu_container/title_options"]
+margin_top = 64.0
+margin_right = 242.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Options"
+valign = 1
+uppercase = true
+
+[node name="exit_game_label" type="Label" parent="title_rect/title_label/menu_container/title_options"]
+margin_top = 96.0
+margin_right = 242.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Exit to Desktop"
+uppercase = true
+
+[node name="selector" parent="." instance=ExtResource( 6 )]
+scale = Vector2( 1.5, 1.5 )
+
+[node name="visual_accessibility_info" parent="." instance=ExtResource( 7 )]
+margin_top = 350.0
+margin_bottom = 446.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
